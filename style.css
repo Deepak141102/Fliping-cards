@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Open+Sans:wght@300;400;800&family=Rubik:wght@300;400;900&family=Heebo:wght@100;400;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* GLOBAL TARGET  */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* CARD INTRO HEADING  */
+
+div.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 7.2rem 0;
+}
+
+div > h1 {
+  text-align: center;
+  font-size: 3.11rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 520;
+  width: 758px;
+  line-height: 4rem;
+  word-spacing: 0.2rem;
+}
+
+/* CARDS GRAND PARENT CONTAINER  */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 7rem;
+}
+
+/* CARD PARENT  */
+.flip {
+  width: 23.66%;
+  height: 30.5vw;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+/* DIV THAT HOLDS BOTH BACK AND FRONT CARDS */
+.card-holder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* HERE IS THE FROMATTING OF BOTH SIDES OF CARDS */
+
+.front-side,
+.back-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 2rem;
+}
+
+.front-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.back-side {
+  background-color: #fbfdfb;
+  color: rgb(26, 25, 25);
+  font-size: 1.5rem;
+  transform: rotateY(180deg);
+  border: 1px solid rgb(220, 216, 216);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CARDS AND FLIP SVG BACKGROUND COLORING  */
+.first,
+.yello {
+  background-color: #facb41;
+}
+
+.second,
+.tom {
+  background-color: #ec724b;
+}
+
+.third,
+.blue {
+  background-color: #00c9b6;
+}
+
+/* NUMBERING OF BOTH SIDE'S CARDS */
+
+.numb,
+p.numbering {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 2.3rem 2.4rem 0 2.4rem;
+}
+
+.one {
+  color: #9e7a0f;
+}
+.two {
+  color: #a94b2d;
+}
+.three {
+  color: #09786d;
+}
+
+/* FRONT AND BACK SIDE'S HEADING AND THEIR FORMATTING  */
+
+/* FRONT  */
+.heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: aliceblue;
+  padding: 6rem 2.4rem 0 2.4rem;
+  font-size: 1.9rem;
+  position: relative;
+  bottom: 8.4rem;
+}
+
+/* BACK  */
+
+p.backface-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  padding: 1.5rem 2.4rem 0 2.4rem;
+}
+
+/* PARA FORMATING OF BACK-SIDE  */
+.infor {
+  padding: 1.5rem 2.4rem 0 2.4rem;
+  color: gray;
+  font-size: 1.125rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* FLIP SVG AND ITS FORMATTING  */
+
+/* FRONT AND BACK  */
+.icon-border,
+.icon-border-back {
+  width: 2.6vw;
+  height: 5.6vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 37px;
+  z-index: 5;
+  left: 17.3rem;
+}
+
+.icon-border-back {
+  bottom: 0;
+}
+
+/* WIDTH  */
+.flip-icon {
+  width: 1.3vw;
+}
+
+/* CARD'S SVGS */
+.card-picture {
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 2rem;
+  width: 17vw;
+}
+
+
+/* HERE IS THE MEDIA QUERIES  */
+
+@media (max-width: 480px) {
+  .flip {
+    width: 90%;
+    height: 49.5vw;
+  }
+
+  .card-picture {
+    width: 40vw;
+  }
+
+  .heading {
+    padding: 8rem 2.4rem 0 4.4rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .numbering,
+  .backface-heading {
+    display: none;
+  }
+  .infor {
+    padding: 26px;
+    font-size: 17px;
+  }
+  .icon-border,
+  .icon-border-back {
+    width: 8.6vw;
+    height: 7.6vh;
+    position: absolute;
+    left: 22rem;
+  }
+  .icon-border-back {
+    bottom: 1.2rem;
+  }
+  .flip-icon {
+    width: 4vw;
+  }
+  div > h1 {
+    width: 90%;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .flip {
+    width: 44%;
+    height: 73vh;
+  }
+
+  .front-side,
+  .back-side {
+    max-width: 500px;
+    min-height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  .infor {
+    padding: 1.5rem 2.4rem 0 1.2rem;
+  }
+
+  .card-picture {
+    width: 34vw;
+  }
+
+  .heading {
+    padding: 0.8rem 2.4rem 0 2.4rem;
+    font-size: 3.5vw;
+  }
+
+  .icon-border,
+  .icon-border-back {
+    position: absolute;
+    width: 5.6vw;
+    height: 6.6vh;
+    left: 16.3rem;
+    top: 21px;
+  }
+
+  .flip-icon {
+    width: 2.3vw;
+  }
+
+  p.backface-heading,
+  .numbering {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .flip {
+    width: 40%;
+  }
+
+  .flip,
+  .back-side,
+  .front-side {
+    height: 51.5vw;
+  }
+
+  .card-picture {
+    width: 32vw;
+  }
+
+  .icon-border,
+  .icon-border-back {
+    width: 4.6vw;
+    height: 7.6vh;
+    left: 19.3rem;
+  }
+
+  .flip-icon {
+    width: 2.3vw;
+  }
+}
